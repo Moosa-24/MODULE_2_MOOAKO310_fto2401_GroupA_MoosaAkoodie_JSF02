@@ -1,7 +1,6 @@
 <script>
-    import ProductSkeleton from './ProductSkeleton.svelte';
     import ProductCard from './ProductCard.svelte';
-    import { products, loading } from '../Store/productStore'; // Adjust import as needed
+    import { products, loading } from '../Store/productStore'; 
   
     let items = [];
     $: if (!loading) {

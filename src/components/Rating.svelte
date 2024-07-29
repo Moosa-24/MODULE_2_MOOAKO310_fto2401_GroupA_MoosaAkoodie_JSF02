@@ -1,32 +1,35 @@
 <script>
-    export let rate = 0;
-    export let count = 5;
-  
-    const isFilled = (starIndex) => rate >= starIndex;
-  </script>
-  
-  <div class="stars">
-    {#each Array(count).fill(0).map((_, index) => index + 1) as starIndex}
-      <span class="star {isFilled(starIndex) ? 'filled' : ''}">&#9733;</span>
-    {/each}
-  </div>
-  
-  <style>
-    .stars {
+  export let rating = 0;
+
+  // Generate a random rating between 1 and 5 if no rating is provided
+  if (rating === 0) {
+    rating = Math.floor(Math.random() * 5) + 1;
+  }
+</script>
+
+<div class="stars">
+  <span class="star" class:filled={rating >= 1}>&#9733;</span>
+  <span class="star" class:filled={rating >= 2}>&#9733;</span>
+  <span class="star" class:filled={rating >= 3}>&#9733;</span>
+  <span class="star" class:filled={rating >= 4}>&#9733;</span>
+  <span class="star" class:filled={rating >= 5}>&#9733;</span>
+</div>
+
+<style>
+  .stars {
       display: inline-flex;
       font-size: 1.25rem;
-      margin-bottom: 8px; /* Space below the stars */
-    }
-  
-    .star {
-      color: #ddd; /* Light grey for unfilled stars */
-      margin: 0 2px; /* Space between stars */
-      font-size: 1.5rem; /* Size of the stars */
-      transition: color 0.3s; /* Smooth transition for color change */
-    }
-  
-    .star.filled {
-      color: #f5b301; /* Gold color for filled stars */
-    }
-  </style>
-  
+      margin-bottom: 8px;
+  }
+
+  .star {
+      color: #ddd;
+      margin: 0 2px;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+  }
+
+  .star.filled {
+      color: #f5b301;
+  }
+</style>

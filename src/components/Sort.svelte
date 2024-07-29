@@ -28,7 +28,7 @@
       on:change={handleSort}
       bind:value={currentSorting}
       id="sort"
-      class="p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+      class="select-element"
     >
       <option value="default">Default</option>
       <option value="low">Price: Low to High</option>
@@ -37,6 +37,65 @@
   </div>
   
   <style>
-    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #ccf8fc;
+      color: #333;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .flex {
+      display: flex;
+      align-items: center;
+    }
+
+    .sm\:w-\[95\%\] {
+      width: 95%;
+    }
+
+    .max-w-\[21rem\] {
+      max-width: 21rem;
+    }
+
+    .md\:w-full {
+      width: 100%;
+    }
+
+    .w-20 {
+      width: 5rem;
+    }
+
+    .my-auto {
+      margin: auto;
+    }
+
+    .font-semibold {
+      font-weight: 600;
+    }
+
+    .select-element {
+      padding: 0.625rem; /* 10px */
+      border-radius: 0.75rem;
+      border: 2px solid #d1d5db;
+      font-size: 0.875rem; /* text-sm */
+      background-color: #f9f9f9;
+      color: #1a1a1a;
+      width: 100%;
+    }
+
+    .select-element:focus {
+      outline-color: #3b82f6;
+      border-color: #3b82f6;
+    }
   </style>
-  

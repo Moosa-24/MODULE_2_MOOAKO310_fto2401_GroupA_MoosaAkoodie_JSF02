@@ -1,6 +1,5 @@
 <script>
-    import ProductDetail from './ProductDetail.svelte';
-    import { productDetails } from '../Store/productStore'; // Adjust import as needed
+    import { productDetails } from '../Store/productStore';
   
     let product = {}; // Placeholder for product details, fetch from store or API
   
