@@ -87,13 +87,14 @@
     align-items: center;
     max-width: 100%;
     margin: 0 auto;
+    position: relative;
   }
 
   .brand-logo {
     height: 50px;
     margin-right: 0;
-    top: 12%;
-    left: 10%;
+    top: 30%;
+    left: 2%;
     position: absolute;
   }
 
