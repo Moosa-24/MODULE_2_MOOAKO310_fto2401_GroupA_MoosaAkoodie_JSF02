@@ -1,7 +1,7 @@
 <script>
     import { productDetails } from '../Store/productStore';
   
-    let product = {}; // Placeholder for product details, fetch from store or API
+    let product = {}; 
   
     // Example of fetching product details
     productDetails.subscribe(value => {

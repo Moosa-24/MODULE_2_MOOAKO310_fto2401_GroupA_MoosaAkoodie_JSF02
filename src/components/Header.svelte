@@ -40,7 +40,7 @@
         </a>
         <span class="cart-badge">2</span>
       </div>
-      <div class="login"><a href="#">Login</a></div>
+      <div class="login"><a href="/login">Login</a></div>
     </div>
     <button
       on:click={toggleNavbar}
@@ -67,17 +67,16 @@
           <span class="cart-badge">2</span>
         </a>
       </li>
-      <li><a href="#" class="menu-item">Login</a></li>
+      <li><a href="/login" class="menu-item">Login</a></li>
     </ul>
   </div>
 </header>
 
 <style>
   .header {
-    background-color: #333;
+    background-color: #767c89;
     color: #fff;
     padding: 1rem;
-    position: sticky;
     top: 0;
     z-index: 50;
   }
@@ -93,14 +92,15 @@
   .brand-logo {
     height: 50px;
     margin-right: 0;
-    top: 35%;
-    left: 2%;
+    top: 12%;
+    left: 10%;
     position: absolute;
   }
 
   .header-title {
     text-align: left;
     margin-left: 40%;
+    color: white;
   }
 
   .header-right {
@@ -128,6 +128,11 @@
   .cart-icon {
     height: 24px;
     width: 24px;
+    color: white;
+  }
+
+  .login a{
+    color: white;
   }
 
   .cart-badge {
