@@ -1,101 +1,114 @@
 <script>
-    import { onDestroy } from 'svelte'; 
-    import { sorting, setSorting } from '../Store/productStore'; 
-    
-    let currentSorting = 'default';
-    
-    // Subscribe to the sorting store to get the current sorting value
-    const unsubscribe = sorting.subscribe(value => {
-      currentSorting = value;
-    });
-    
-    // Cleanup subscription on component destroy
-    onDestroy(() => {
-      unsubscribe();
-    });
-    
-    // Handler for sort change
-    function handleSort(event) {
-      setSorting(event.target.value);
-    }
-  </script>
+  /**
+   * @module SortComponent
+   * @description A component that allows users to sort products by price in ascending or descending order.
+   */
+
+  import { onDestroy } from 'svelte'; 
+  import { sorting, setSorting } from '../Store/productStore'; 
   
-  <div class="flex sm:w-[95%] max-w-[21rem] md:w-full">
-    <label for="sort" class="w-20 my-auto font-semibold">
-      Sort by: 
-    </label>
-    <select
-      on:change={handleSort}
-      bind:value={currentSorting}
-      id="sort"
-      class="select-element"
-    >
-      <option value="default">Default</option>
-      <option value="low">Price: Low to High</option>
-      <option value="high">Price: High to Low</option>
-    </select>
-  </div>
+  let currentSorting = 'default';
   
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  /**
+   * Subscribes to the sorting store to get the current sorting value and updates the component state.
+   * Cleans up the subscription when the component is destroyed.
+   * @function
+   */
+  const unsubscribe = sorting.subscribe(value => {
+    currentSorting = value;
+  });
+  
+  /**
+   * Handles the change event of the sorting dropdown and updates the sorting value in the store.
+   * @param {Event} event - The change event from the dropdown. (error?)
+   * @function
+   */
+  function handleSort(event) {
+    setSorting(event.target.value);
+  }
+  
+  // Cleanup subscription on component destroy
+  onDestroy(() => {
+    unsubscribe();
+  });
+</script>
 
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #ccf8fc;
-      color: #333;
-    }
+<div class="flex sm:w-[95%] max-w-[21rem] md:w-full">
+  <label for="sort" class="w-20 my-auto font-semibold">
+    Sort by: 
+  </label>
+  <select
+    on:change={handleSort}
+    bind:value={currentSorting}
+    id="sort"
+    class="select-element"
+  >
+    <option value="default">Default</option>
+    <option value="low">Price: Low to High</option>
+    <option value="high">Price: High to Low</option>
+  </select>
+</div>
 
-    .container {
-      width: 80%;
-      margin: 0 auto;
-    }
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    .flex {
-      display: flex;
-      align-items: center;
-    }
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #ccf8fc;
+    color: #333;
+  }
 
-    .sm\:w-\[95\%\] {
-      width: 95%;
-    }
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
 
-    .max-w-\[21rem\] {
-      max-width: 21rem;
-    }
+  .flex {
+    display: flex;
+    align-items: center;
+  }
 
-    .md\:w-full {
-      width: 100%;
-    }
+  .sm\:w-\[95\%\] {
+    width: 95%;
+  }
 
-    .w-20 {
-      width: 5rem;
-    }
+  .max-w-\[21rem\] {
+    max-width: 21rem;
+  }
 
-    .my-auto {
-      margin: auto;
-    }
+  .md\:w-full {
+    width: 100%;
+  }
 
-    .font-semibold {
-      font-weight: 600;
-    }
+  .w-20 {
+    width: 5rem;
+  }
 
-    .select-element {
-      padding: 0.625rem; /* 10px */
-      border-radius: 0.75rem;
-      border: 2px solid #d1d5db;
-      font-size: 0.875rem; /* text-sm */
-      background-color: #f9f9f9;
-      color: #1a1a1a;
-      width: 100%;
-    }
+  .my-auto {
+    margin: auto;
+  }
 
-    .select-element:focus {
-      outline-color: #3b82f6;
-      border-color: #3b82f6;
-    }
-  </style>
+  .font-semibold {
+    font-weight: 600;
+  }
+
+  .select-element {
+    padding: 0.625rem; /* 10px */
+    border-radius: 0.75rem;
+    border: 2px solid #d1d5db;
+    font-size: 0.875rem; /* text-sm */
+    background-color: #f9f9f9;
+    color: #1a1a1a;
+    width: 100%;
+  }
+
+  .select-element:focus {
+    outline-color: #3b82f6;
+    border-color: #3b82f6;
+  }
+</style>

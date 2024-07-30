@@ -4,7 +4,13 @@
     let selectedCategory = '';
     let categories = [];
     
-    // Fetch categories from the API
+     /**
+     * Fetches product categories from the API and adds them to the categories array.
+     * Adds "All Categories" as an additional option.
+     * @async
+     * @function fetchCategories
+     * @returns {Promise<void>}
+     */
     async function fetchCategories() {
       try {
         const response = await fetch('https://fakestoreapi.com/products/categories');
@@ -16,7 +22,12 @@
       }
     }
     
-    // Handle category selection change
+     /**
+     * Handles the change event for the category selection.
+     * Updates the selected category and sets the filter item in the store.
+     * @function handleChange
+     * @param {Event} event - The change event object. (giving an error??)
+     */
     function handleChange(event) {
       selectedCategory = event.target.value;
       setFilterItem(selectedCategory === 'All Categories' ? '' : selectedCategory);

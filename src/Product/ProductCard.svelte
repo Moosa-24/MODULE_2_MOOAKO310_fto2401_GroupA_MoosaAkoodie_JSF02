@@ -1,4 +1,16 @@
 <script>
+  /**
+   * Represents a product card component.
+   *
+   * @component
+   * @param {Object} product - The product details.
+   * @param {string} product.id - The unique identifier for the product.
+   * @param {string} product.title - The title of the product.
+   * @param {string} product.image - The URL of the product image.
+   * @param {number} product.price - The price of the product.
+   * @param {number} product.rating - The rating of the product.
+   * @param {string} product.category - The category of the product.
+   */
   import Ratings from '../components/Rating.svelte';
 
   export let product = {

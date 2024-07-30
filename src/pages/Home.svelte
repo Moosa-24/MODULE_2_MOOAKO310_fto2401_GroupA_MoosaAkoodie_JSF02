@@ -1,4 +1,8 @@
 <script>
+    /**
+   * Main layout for the product page.
+   * Includes filters, sorting options, and the product list.
+   */
     import ProductList from '../Product/ProductList.svelte';
     import Filter from '../components/Filter.svelte';
     import Sort from '../components/Sort.svelte';
@@ -11,6 +15,6 @@
   <ProductList />
   
   <style>
-    /* Add any additional styles if needed */
+    
   </style>
   

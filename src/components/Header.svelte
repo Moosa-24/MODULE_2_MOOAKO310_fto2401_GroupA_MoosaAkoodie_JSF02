@@ -1,6 +1,10 @@
 <script>
   import { onMount } from 'svelte';
-  
+
+  /**
+   * Boolean to track the state of the navbar (open/closed).
+   * @type {boolean}
+   */
   let navbarOpen = false;
   
   const toggleNavbar = () => {

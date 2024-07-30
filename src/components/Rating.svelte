@@ -1,7 +1,18 @@
 <script>
+  /**
+   * A component that displays a star rating.
+   * 
+   * @component
+   * @example
+   * <Rating rating={3} />
+   */
+  
   export let rating = 0;
 
-  // Generate a random rating between 1 and 5 if no rating is provided
+  /**
+   * If no rating is provided, generate a random rating between 1 and 5.
+   * @type {number}
+   */
   if (rating === 0) {
     rating = Math.floor(Math.random() * 5) + 1;
   }
